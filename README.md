@@ -12,7 +12,8 @@ Once activity is created opening this activity will load the image
 6. This uses JavaScript package for 3D Visualization
 
 ## Video
-Here I have recorded a video for better understanding.
+Here I have recorded a video for better understanding.<br>
+https://www.loom.com/share/8726353100b34f9aabfaa9d239bb782d
 
 ## Screenshot
 ![Screenshot of Moodle Course Page](https://user-images.githubusercontent.com/15896579/56090401-7bc84e00-5ebf-11e9-99bb-aecb5a043aed.PNG?raw=true "Screenshot of Moodle Course Page")
