@@ -1,4 +1,4 @@
-# MIV
+# Medical Image Viewer with 3D Rotation
 MIV is the plugin developed in Moodle 3.6. This is the mod plugin which when while creating/editing this course activity need to upload the .vtx image (i.e. 3D image eg. skull.vtk) <br>
 
 Once activity is created opening this activity will load the image
