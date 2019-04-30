@@ -90,7 +90,7 @@ STEP3: JavaScript file which will render the image uploaded:
 
 ```
 
-STEP4: (A) Core Changes:
+STEP4: Core Changes:
 
 Path -  moodle project/course/modeedit.php
 Go to line 150 in modedit.php enter and paste below code: I have also shared the modedit.php page for easier comparison or
@@ -127,7 +127,11 @@ $DB->execute("INSERT INTO mdl_medicalimageviewer_images(itemid, course, coursemo
 ```
 ## Video
 Here I have recorded a video for better understanding.<br>
-https://www.loom.com/share/5b173e41e3da4650a06c41411e311fee  <br>
+Video 1 (Full Video):
+This video includes installation of mod plugin, adding 3D image activities and viewing all of them .
+ https://www.loom.com/share/5b173e41e3da4650a06c41411e311fee  <br>
+
+Video 2 (Short Video):<br>
 https://www.loom.com/share/8726353100b34f9aabfaa9d239bb782d
 
 ## Screenshot
