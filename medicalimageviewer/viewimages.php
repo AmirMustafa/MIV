@@ -28,7 +28,7 @@
 
 <html>
 <head>
-<title>XTK LESSON 00</title>
+<title>Image Viewer</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <script type="text/javascript" src="http://get.goXTK.com/xtk_edge.js"></script>
 <script type="text/javascript" src="x-master/visualization/renderer3D.js"></script>
@@ -37,21 +37,17 @@
 </head>
 
 <?php 
-	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	list($baselink, $otherlink) = explode('/mod', $actual_link);
 	$cmid = $_GET['cmid'];
 ?>
 
 <body>
-	<div>
-		<a href="<?php echo $baselink . '/mod/medicalimageviewer/view.php?id=' . $cmid . '&mode=list' ?>" class="btn btn-primary" style="margin-top: 2%; margin-left: 2%;">Return Back</a>
-	</div>
-	
 	<div id='jsfiddle' style='position:absolute;bottom:10px;left:10px;'><a href='http://jsfiddle.net/gh/get/toolkit/edge/xtk/lessons/tree/master/00/#run' target=_blank><img src='http://xtk.github.com/fiddlelogo.png' border=0></a></div>
 </body>
 </html>
 
- <!-- ================= Added Script for parsing 3D Visualization File: Start =============== -->
+  <!-- ================= Added Script for parsing 3D Visualization File: Start =============== -->
 <script type="text/javascript">
 	window.onload = function() {
 	  let imgdata = '<?php echo $currenturl ?>';
@@ -63,9 +59,9 @@
 	  // create a new X.mesh
 	  var skull = new X.mesh();
 	  // .. and associate the .vtk file to it
-	  // skull.file = 'http://x.babymri.org/?skull.vtk';
-	  skull.file = imgdata;
-	  //skull.file = 'http://people.sc.fsu.edu/~lb13f/projects/finite_difference/three_js/cavity_test_7.vtk';
+	  skull.file = imgdata;										// dynamic data from db
+	  // skull.file = 'http://x.babymri.org/?skull.vtk';		// testing online link
+	  
 	  // .. make it transparent
 	  skull.opacity = 0.7;
 	  

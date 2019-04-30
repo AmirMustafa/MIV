@@ -90,8 +90,44 @@ STEP3: JavaScript file which will render the image uploaded:
 
 ```
 
+STEP4: (A) Core Changes:
+
+Path -  moodle project/course/modeedit.php
+Go to line 150 in modedit.php enter and paste below code: I have also shared the modedit.php page for easier comparison or
+
+Search this line: else if ($fromform = $mform->get_data()) and press enter and paste below code
+
+```
+//  ============= Added for handelling image upload: Start ==============
+   // receiving the image and updating in db.      
+   $idnumberk           = $fromform->mivimage;
+   $coursek             = $fromform->course;
+   $time                = time();
+   $imagekk             = $mform->get_new_filename('mivimage');
+  
+   // for edit case course module id
+   $coursemodulek       = $fromform->coursemodule;
+   // For insert case course module id
+   if($coursemodulek == 0) {
+       $coursemodulefreshSql = $DB->get_record_sql("
+           SELECT id FROM {course_modules} ORDER BY 1 DESC LIMIT 1
+       ");
+      
+       // if db has no value set coursemodule to 1, otherwise new course module id will be (last id + 1)
+       if(empty($coursemodulefreshSql)) {
+           $coursemodulek = 1;
+       } else {
+           $coursemodulelast = $coursemodulefreshSql->id;
+           $coursemodulek = $coursemodulelast + 1;
+       }
+   }
+$DB->execute("INSERT INTO mdl_medicalimageviewer_images(itemid, course, coursemodule, image,  time_created) VALUES($idnumberk, $coursek, $coursemodulek,'$imagekk', $time)");
+//  =========== Added for handelling image upload: End ==================
+
+```
 ## Video
 Here I have recorded a video for better understanding.<br>
+https://www.loom.com/share/5b173e41e3da4650a06c41411e311fee  <br>
 https://www.loom.com/share/8726353100b34f9aabfaa9d239bb782d
 
 ## Screenshot

@@ -16,6 +16,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+// commented for skipping the setting page
+/*
 if ($ADMIN->fulltree) {
 
     $settings->add(new admin_setting_configselect('medicalimageviewer/showrecentactivity', get_string('showrecentactivity', 'medicalimageviewer'),
@@ -26,3 +28,5 @@ if ($ADMIN->fulltree) {
                                                   get_string('showoverview', 'medicalimageviewer'), 1,
                                                   array('0' => get_string('no'), '1' => get_string('yes'))));
 }
+
+*/
